@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" type="text/css" href="path-to-font/neo-sans-arabic.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="./css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Ticket_task</title>
+</head>
+<body onload="toggleDirection()">
+<div class="container p-1" dir="ltr">
+<!-- start header part -->
+
+    <header>
+      <div class="edit"><a href="#">تعديل</a> <img src="./images/edit.png" alt="edit"></div>  
+    <div class="arrow">
+<span>تذكرة رقم #2342</span>
+<a href="#"><img src="./images/arrow-right.png" alt="arrow"></a>
+    </div>
+    </header>
+
+  <!-- end header part -->
+    <!-- start section 1 -->
+    <section id="sec-1">
+        
+        <div class="card_part h-100">
+        <div class="first_part">
+
+            <button data-bs-toggle="tooltip" title="حذف"><img src="./images/trash.png" alt="delete"></button>
+             <div class="text-part">
+                <p class="first">عرض التذكرة الخاصة بالفيلم</p>
+                <p class="two"> <img src="./images/Group.png" class="me-1"alt="copy" onclick="copyText()"><span id="textToCopy">www.tazkty.com/473847</span></p>
+                <p class="three">فعال حتي 15 يوليو 2023</p>
+             </div>
+        </div>
+
+        <div class="second_part">
+            <img src="./images/qr.png" alt="qr">
+            <div class="last-part">
+               <div><button>مشاركة <img src="./images/send.png" alt="send" class=""></button></div> 
+                <span>خصم<br/><span>25%</span></span>
+            </div>
+        </div>
+    </div>
+    <div class="chart-part h-100">
+        <div class="chart_part1">
+           
+    <div class="custom-dropdown" dir="rtl">
+        <button class="dropdown-btn" type="button" id="customDropdownBtn" aria-haspopup="true" aria-expanded="false">
+            سنويا<img src="./images/down.png" class="me-2">
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="customDropdownBtn">
+            <li><a class="dropdown-item" href="#">إجراء 1</a></li>
+            <li><a class="dropdown-item" href="#">إجراء 2</a></li>
+            <li><a class="dropdown-item" href="#">إجراء 3</a></li>
+        </ul>
+    </div>
+            <div class="chart_text">
+                <p>إحصائيات إستخدام القسيمة</p>
+                <p class="two">
+                    <span><img src="./images/down.png" class="me-1">2023<span dir="rtl"> اغسطس</span>05-2023<span dir="rtl"> يوليو</span> 5</span>
+                </p>
+            </div>
+        </div>
+<div class="chart_part2">
+
+ <canvas id="myChart" width="" height="200" class="w-100"></canvas>
+
+</div>
+    </div>
+    </section>
+    <!-- end section 1 -->
+    <!-- start section 2 -->
+    <section id="sec-2">
+        
+        <div class="two_part">
+<div class="sec1">
+<button classs="button-2">حجز تذكرة جديدة</button>
+<div class="d-flex align-items-center"><span class="me-2">مفعلة</span>
+<label class="switch">
+    
+    <input type="checkbox" checked>
+    <span class="slider round"></span>
+  </label>
+</div>
+</div>
+<div class="sec2">
+    <div class="icon_part">
+    <span class=""><img src="./images/arrow.png" alt="search"></span>
+    <span><img src="./images/setting.png" alt="search"></span>
+</div>
+<div class="search_part">
+    <div class="search-container">
+        <input type="text" class="search-input" dir="rtl" placeholder="بحث عن......">
+        <div class="search-icon"><img src="./images/search.png" alt="search"></div>
+      </div>
+  
+      <p>مبيعات التذاكر</p>
+    </div>
+</div>
+</div>
+    </section>
+    <!-- end section 2 -->
+    <!-- start section 3 -->
+    <section id="sec-3">
+        <div class="table-responsive tabel_contant">
+        <table class="table caption-top">
+          
+            <thead>
+              <tr>
+                <th >التذكرة</th>
+                <th >عدد مرات الشراء</th>
+                <th >عدد الأشخاص</th>
+                <th >السينمات</th>
+                <th dir="rtl">قيمى التذكر<img src="./images/arrow.png" alt="search" class="me-1"> </th>
+                <th >رقم التذكرة</th>
+                <th>المستخدم</th>
+                <th class="last_th">#</th>
+               
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th>
+                    <div class="first_th">
+                    <img src="./images/download.png"  class="p-1 me-1"alt="search">
+                    <span>تذكرة رقم 45.pdf<br/><small>9mb.PDF</small></span><img src="./images/ticket.png" alt="ticket" class="ticket ms-2">
+                </div>
+                </th>
+                <th>مرة واحدة</th>
+                <th>1</th>
+                <th> <button data-bs-toggle="tooltip" title="صيدناوي مول , برج العرب"><span dir="rtl" >سينما مصر , مول العرب , برج الأطنان , سرايا القبة ...</span></button></th>
+                <th>$40</th>
+                <th>C-101</th>
+                <th class="first_th2">
+                  
+                 
+                        <span>أحمد محمود<br/><small>0123456789</small></span>
+                        
+                  
+                    <span class="port_frame">Ma</span>
+                </th>
+                <th class="last_th">1</th>
+              </tr>
+              <tr>
+                <th>
+                    <div class="first_th">
+                    <img src="./images/download.png"  class="p-1 me-1"alt="search">
+                    <span>تذكرة رقم 45.pdf<br/><small>9mb.PDF</small></span><img src="./images/ticket.png" alt="ticket" class="ticket ms-2">
+                </div>
+                </th>
+                <th>مرة واحدة</th>
+                <th>1</th>
+                <th> <button data-bs-toggle="tooltip" title="صيدناوي مول , برج العرب"><span dir="rtl" >سينما مصر , مول العرب , برج الأطنان , سرايا القبة ...</span></button></th>
+                <th>$40</th>
+                <th>C-102</th>
+                <th class="first_th2">
+                  
+                 
+                        <span>محمد الغريب<br/><small>0123456789</small></span>
+                        
+                  
+                    <span class=""><img src="./images/image1.png" alt="" class="img-fluid"></span>
+                </th>
+                <th>1</th>
+              </tr>
+              <tr>
+                <th >
+                    <div class="first_th">
+                    <img src="./images/download.png"  class="p-1 me-1"alt="search">
+                    <span>تذكرة رقم 45.pdf<br/><small>9mb.PDF</small></span><img src="./images/ticket.png" alt="ticket" class="ticket ms-2">
+                </div>
+                </th>
+                <th>مرة واحدة</th>
+                <th>1</th>
+                <th> <button data-bs-toggle="tooltip" title="صيدناوي مول , برج العرب"><span dir="rtl" >سينما مصر , مول العرب , برج الأطنان , سرايا القبة ...</span></button></th>
+                <th>$40</th>
+                <th>C-101</th>
+                <th class="first_th2">
+                  
+                 
+                        <span>أحمد محمود<br/><small>0123456789</small></span>
+                        
+                  
+                    <span class="port_frame">Ma</span>
+                </th>
+                <th class="last_th">3</th>
+              </tr>
+              <tr>
+                <th>
+                    <div class="first_th">
+                    <img src="./images/download.png"  class="p-1 me-1"alt="search">
+                    <span>تذكرة رقم 45.pdf<br/><small>9mb.PDF</small></span><img src="./images/ticket.png" alt="ticket" class="ticket ms-2">
+                </div>
+                </th>
+                <th>مرة واحدة</th>
+                <th>1</th>
+                <th>  <button data-bs-toggle="tooltip" title="صيدناوي مول , برج العرب"><span dir="rtl" >سينما مصر , مول العرب , برج الأطنان , سرايا القبة ...</span></button></th>
+                <th>$40</th>
+                <th>C-102</th>
+                <th class="first_th2">
+                  
+                 
+                        <span>محمد الغريب<br/><small>0123456789</small></span>
+                        
+                  
+                    <span class=""><img src="./images/image2.png" alt="" class="img-fluid"></span>
+                </th>
+                <th class="last_th">4</th>
+              </tr>
+              <tr>
+                <th colspan="6">
+                    <div class="pagination">
+                        <a href="#" onclick="changePage('prev')"><img src="./images/right.png" alt=""></a>
+                        <a href="#" onclick="changePage(2)">1</a>
+                        <a href="#" onclick="changePage(2)" class="active">2</a>
+                        <a href="#" onclick="changePage(3)">3</a>
+                        <a href="#" onclick="changePage(4)">4</a>
+                        <a href="#" onclick="changePage(5)">5</a>
+                        <a href="#" onclick="changePage(6)">6</a>
+                        <a href="#" onclick="changePage('next')"><img src="./images/left.png" alt=""></a>
+                    </div>
+                </th>
+
+               
+            
+                <th colspan="3" class="row_element">
+                    <span class="element1">من اصل 250</span>
+                    <div class="dropdown2">
+                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink2" data-bs-toggle="dropdown2" aria-expanded="false">
+                         20
+                        </a>
+                      
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink2">
+                          <li><a class="dropdown-item" href="#">1</a></li>
+                          <li><a class="dropdown-item" href="#">2</a></li>
+                          <li><a class="dropdown-item" href="#">3</a></li>
+                        </ul>
+                      </div>
+                    <span class="element2">عرض</span>
+                </th>
+             
+              </tr>
+            </tbody>
+          </table>
+        </div>
+    </section>
+    <!-- end section 3 -->
+   
+</div>
+    <footer>
+        
+    </footer>
+
+    <script src="./js/style.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="./js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script>
+      var charthata = {
+    labels: ["سبتمبر", "أغسطس", "يوليو", "يونيو", "مايو", "إبريل", "مارس", "فبراير", "يناير"],
+    datasets: [
+        {
+            label: "",
+            data: [50, 100, 45, 75, 85, 90, 50, 80, 40, 30, 20, 90],
+            borderColor: 'rgba(138, 116, 249, 1)', 
+            borderWidth: 2,
+            pointRadius: 5,
+            fill: true,
+        }
+    ]
+};
+
+// Configuration options
+var chartOptions = {
+    scales: {
+        x: {
+            title: {
+                display: true,
+                text: ""
+            },
+            texthirection: 'rtl',
+        },
+        y: {
+            display: false 
+        }
+    },
+    elements: {
+        line: {
+            tension: 0.5,
+        }
+    },
+    maintainAspectRatio: false, 
+    responsive: true 
+};
+
+// Get the canvas element
+var ctx = document.getElementById('myChart').getContext('2d');
+
+// Create the chart
+var myChart = new Chart(ctx, {
+    type: 'line',
+    data: charthata,
+    options: chartOptions,
+    plugins: [{
+        beforeDraw: function (chart) {
+            var ctx = chart.ctx;
+            var chartArea = chart.chartArea;
+            var gradient = ctx.createLinearGradient(0, chartArea.bottom, 0, chartArea.top);
+            gradient.addColorStop(0, 'rgba(138, 116, 249, .9)');
+            gradient.addColorStop(0.2, 'rgba(138, 116, 249, 0.1)');
+            gradient.addColorStop(1, 'rgba(138, 116, 249, 0)');
+            ctx.fillStyle = gradient;
+            ctx.fillRect(chartArea.left, chartArea.top, chartArea.right - chartArea.left, chartArea.bottom - chartArea.top);
+        }
+    }]
+});
+
+    </script>
+
+   
+</body>
+</html>
